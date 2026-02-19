@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chopsticks</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="index.css">
+</head>
+<body>
+<div class="game-wrap">
+  <!-- Header -->
+  <div class="flex items-center justify-between mb-6">
+    <div>
+      <h1>CHOPSTICKS</h1>
+      <p class="text-xs text-gray-500 font-medium tracking-widest mt-1">TANGAN VS BOT</p>
+    </div>
+    <button id="resetBtn" class="reset-btn">↺ RESET</button>
+  </div>
+
+  <!-- Difficulty + Turn -->
+  <div class="flex items-center justify-between mb-5 gap-2 flex-wrap">
+    <div class="flex gap-2">
+      <button class="diff-btn active" data-diff="1">MUDAH</button>
+      <button class="diff-btn" data-diff="2">SEDANG</button>
+      <button class="diff-btn" data-diff="3">SUSAH</button>
+    </div>
+    <span id="turnPill" class="turn-pill">GILIRAN KAMU</span>
+  </div>
+
+  <!-- BOT (Player 2) — TOP -->
+  <div id="sec2" class="player-section mb-3">
+    <div class="flex items-center justify-between mb-4">
+      <span class="player-label text-red-400">🤖 BOT</span>
+      <div id="botThinking" class="hidden flex gap-1 items-center">
+        <span class="text-xs text-red-400 mr-1">thinking</span>
+        <div class="w-2 h-2 rounded-full bg-red-400 dot-1"></div>
+        <div class="w-2 h-2 rounded-full bg-red-400 dot-2"></div>
+        <div class="w-2 h-2 rounded-full bg-red-400 dot-3"></div>
+      </div>
+      <span id="p2hp" class="text-xs text-gray-500 font-semibold"></span>
+    </div>
+    <div class="flex justify-center gap-6">
+      <div class="flex flex-col items-center gap-2">
+        <div id="p2l" class="hand-card no-hover" data-player="2" data-hand="left">
+          <div id="svg2l" class="finger-svg"></div>
+          <span class="count-badge" id="cnt2l">1</span>
+        </div>
+        <span class="text-xs text-gray-600 tracking-widest">KIRI</span>
+      </div>
+      <div class="flex flex-col items-center gap-2">
+        <div id="p2r" class="hand-card no-hover" data-player="2" data-hand="right">
+          <div id="svg2r" class="finger-svg"></div>
+          <span class="count-badge" id="cnt2r">1</span>
+        </div>
+        <span class="text-xs text-gray-600 tracking-widest">KANAN</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- VS divider -->
+  <div class="flex items-center justify-center my-3">
+    <div class="flex-1 h-px bg-gray-800"></div>
+    <span class="vs-badge mx-3">VS</span>
+    <div class="flex-1 h-px bg-gray-800"></div>
+  </div>
+
+  <!-- PLAYER 1 — BOTTOM -->
+  <div id="sec1" class="player-section mb-5 active">
+    <div class="flex items-center justify-between mb-4">
+      <span class="player-label text-teal-400">👤 KAMU</span>
+      <span id="p1hp" class="text-xs text-gray-500 font-semibold"></span>
+    </div>
+    <div class="flex justify-center gap-6">
+      <div class="flex flex-col items-center gap-2">
+        <div id="p1l" class="hand-card" data-player="1" data-hand="left">
+          <div id="svg1l" class="finger-svg"></div>
+          <span class="count-badge" id="cnt1l">1</span>
+        </div>
+        <span class="text-xs text-gray-600 tracking-widest">KIRI</span>
+      </div>
+      <div class="flex flex-col items-center gap-2">
+        <div id="p1r" class="hand-card" data-player="1" data-hand="right">
+          <div id="svg1r" class="finger-svg"></div>
+          <span class="count-badge" id="cnt1r">1</span>
+        </div>
+        <span class="text-xs text-gray-600 tracking-widest">KANAN</span>
+      </div>
+    </div>
+    <!-- Split buttons -->
+    <div class="flex justify-center gap-3 mt-4">
+      <button id="sp1l" class="action-btn" disabled>SPLIT KIRI</button>
+      <button id="sp1r" class="action-btn" disabled>SPLIT KANAN</button>
+    </div>
+  </div>
+
+  <!-- Message -->
+  <div id="msg" class="msg-bar">Pilih tangan kamu, lalu klik tangan lawan.</div>
+</div>
+
+<script src="index.js"></script>
+</body>
+</html>
