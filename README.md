@@ -2,7 +2,8 @@
 
 Permainan jari klasik yang dimainkan melawan kecerdasan buatan (AI) dengan tiga tingkat kesulitan. Tujuannya adalah menjatuhkan kedua tangan lawan (mencapai nilai 5) sebelum lawan menjatuhkan tanganmu.
 
-**[Mainkan Langsung](https://riswan-nopiyar.github.io/Web-permainan-jari)** (ganti dengan URL GitHub Pages-mu)
+**[Mainkan Langsung](https://riswan-nopiyar.github.io/Web-permainan-jari)** 
+<br/>
 <img width="253" height="500" alt="image" src="https://github.com/user-attachments/assets/81718801-a0bc-45b7-8a43-d931bc0735c9" />
 
 
